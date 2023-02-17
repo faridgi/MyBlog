@@ -23,7 +23,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
-mongoose.connect('mongodb+srv://farid:6vvPQNPDLmvvN3E@cluster0.aunvk.mongodb.net/blog?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology: true})
   .then(()=>console.log("Connexion à MongoDB réussie"))
   .catch(()=> console.log("Echec de connexion à mongoDB"));
 
